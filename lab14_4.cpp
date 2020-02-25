@@ -19,3 +19,24 @@ int main(){
 }
 
 //Write definition of shuffle() here 
+void shuffle(int &FT,int &HD, int &FHD, int &TS){
+	int Money[]{50,100,500,1000};
+
+	FT=Money[rand()%4];
+	
+	do {
+		HD=Money[rand()%4];
+	}
+	while(HD==FT);
+
+	do {
+		FHD=Money[rand()%4];
+	}
+	while(FHD==FT||FHD==HD);
+	
+	do {
+		TS=Money[rand()%4];
+	}
+	while(TS==HD||TS==FT||TS==FHD);
+
+}
